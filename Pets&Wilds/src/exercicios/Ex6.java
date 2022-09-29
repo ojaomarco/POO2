@@ -1,5 +1,6 @@
 package exercicios;
 
+import java.nio.file.attribute.AclFileAttributeView;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collector;
@@ -11,8 +12,9 @@ public class Ex6 {
         new Fish("Free Willy"), new Spider(), new Fish("Jaws"));
 
         animals.stream()
-        .collect(Collectors.groupingBy(Animal::getLegs))
+        .collect(Collectors.groupingBy(Animal::getLegs,Collectors.counting()))
+       
         .forEach((a,b)->System.out.println(a+": "+b));
-         
+         //aasdasd
     }
 }
